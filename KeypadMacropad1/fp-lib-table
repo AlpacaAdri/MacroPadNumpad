@@ -1,4 +1,6 @@
 (fp_lib_table
   (lib (name Button_Switch_Keyboard)(type KiCad)(uri "/home/snakespeare/Documents/kicad libs?/Button_Switch_Keyboard.pretty")(options "")(descr ""))
   (lib (name Arduino)(type KiCad)(uri "/home/snakespeare/Documents/kicad libs?/arduino-kicad-library-master/Arduino.pretty")(options "")(descr ""))
+  (lib (name "internal Library")(type KiCad)(uri /home/snakespeare/macroPad_Numpad_git/internalLibs)(options "")(descr ""))
+  (lib (name KeypadMacropad1)(type KiCad)(uri ${KIPRJMOD}/KeypadMacropad1.pretty)(options "")(descr ""))
 )
