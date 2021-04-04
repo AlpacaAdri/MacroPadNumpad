@@ -1,4 +1,4 @@
- #include <Keyboard.h>
+#include <Keyboard.h>
 #include <Encoder.h>
 
 
@@ -108,7 +108,7 @@ void keyPressed(int row, int col) {
         mode3(layout[row][col], numlok, pointNumLok);
         break;
     }
-    mode0(layout[row][col], numlok, pointNumLok);
+    
     keyDown[row][col] = 1;
   }
   else if (keyDown[row][col] > longPressDelay) { //if the key has been held for longer that longPressDelay, it switches into spam mode
@@ -182,7 +182,7 @@ void loop() {
   //display to LEDs
   LEDDisplay(mode, numlok);
   //Emergency Testing disable
-  if(digitalRead(A3)== HIGH){
+  if(digitalRead(A3) == HIGH){
     Keyboard.end();
   }
 
