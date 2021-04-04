@@ -14,15 +14,15 @@
    output keybinding function to computer: DONE
 */
 
-byte cols[] = {15, 14, 16, 10}; //pins for columns
-const int colCount = sizeof(cols) / sizeof(cols[0]);
+byte rows[] = {15, 14, 16, 10}; //pins for columns
+byte cols[] = {9, 8, 7, 6, 5}; //pins for rows
 
-byte rows[] = {9, 8, 7, 6, 5}; //pins for rows
+const int colCount = sizeof(cols) / sizeof(cols[0]);
 const int rowCount = sizeof(rows) / sizeof(rows[0]);
 
 //overall control vars
 byte mode = 0;//what mode am I in?
-bool numlok = false; //is the numlock button on?
+bool numlok = true; //is the numlock button on?
 bool * pointNumLok = &numlok;
 
 int spamSpeed = 15;
@@ -51,7 +51,7 @@ void setup() {
   pinMode(A3, INPUT);//disable keyboard pin
 
   pinMode(2, OUTPUT);//numlok LED output
-  pinMode(A0, INPUT);//numlok key input
+  pinMode(A0, INPUT_PULLUP);//numlok key input
   pinMode(3, OUTPUT);//left mode disp LED
   pinMode(4, OUTPUT);//right mode disp LED
 
@@ -169,12 +169,12 @@ void loop() {
   //check encoder
 
   //check if modeSwitch is pressed
-  while (digitalRead(A0) == HIGH) {
+  while (digitalRead(A0) == LOW) {
     mode++;
     if (mode > 3) {
       mode = 0;
     }
-    delay(1000);
+    delay(500);
     LEDDisplay(mode, numlok);//show mode going up in binary on LEDs
   }
 

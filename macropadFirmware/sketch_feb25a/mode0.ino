@@ -16,7 +16,7 @@ void mode0(byte keyNum, bool numlok, bool * pointNumLok) {
   if (numlok) {
     switch (keyNum) {
       case 0:
-        *pointNumLok = !numlok; //if numlok is pressed, flip numlok. alternatively, you can get an extra button. but then you'd cut the total # of buttons in the mode in half.
+       *pointNumLok = !numlok; //if numlok is pressed, flip numlok. alternatively, you can get an extra button. but then you'd cut the total # of buttons in the mode in half.
         break;
       case 1:// '/' key
         Keyboard.write('/');
@@ -67,64 +67,64 @@ void mode0(byte keyNum, bool numlok, bool * pointNumLok) {
         Keyboard.write('.');
         break;
       case 19://'ENTER' key
-        Keyboard.write(015);
+        Keyboard.write(176);
         break;
     }
   } else {
     switch (keyNum) {
-      case 0:
-        *pointNumLok = !numlok; //if numlok is pressed, flip numlok.
+     case 0:
+        *pointNumLok = !numlok; //if numlok is pressed, flip numlok. alternatively, you can get an extra button. but then you'd cut the total # of buttons in the mode in half.
         break;
-      case 1:// '/' key
-
+     case 1:// '/' key
+        Keyboard.write('/');
         break;
       case 2:// '*' key
-
+        Keyboard.write('*');
         break;
       case 3:// '-' key
-
+        Keyboard.write('-');
         break;
       case 4:// '7' key
-
+        Keyboard.write('7');
         break;
       case 5:// '8' key
-
+        Keyboard.write(218);
         break;
       case 6:// '9' key
-
+        Keyboard.write('9');
         break;
       case 7:// 'ENCODER' key
-
+        Keyboard.write(153);
         break;
       case 8:// '4' key
-
+        Keyboard.write(216);
         break;
       case 9:// '5' key
-
+        Keyboard.write('5');
         break;
       case 10:// '6' key
-
+        Keyboard.write(215);
         break;
       case 11://'+' key
-
+        Keyboard.write('+');
         break;
       case 12:// '1' key
-
+        Keyboard.write('1');
         break;
       case 13://'2' key
-
+        Keyboard.write(217);
         break;
       case 14:// '3' key
-
+        Keyboard.write('3');
         break;
       case 16:// '0' key
-
+        Keyboard.write('0');
         break;
       case 18://'.' key
-
+        Keyboard.write('.');
         break;
       case 19://'ENTER' key
-
+        Keyboard.write(176);
         break;
     }
   }
