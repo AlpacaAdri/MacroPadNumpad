@@ -1,4 +1,4 @@
-#include <Keyboard.h>
+ #include <Keyboard.h>
 #include <Encoder.h>
 
 
@@ -121,6 +121,7 @@ void keyPressed(int row, int col) {
 void resetKey(int row, int col) { //resetting the variables after key is released
   keyDown[row][col] = 0;
   keyLong[row][col] = false;
+  Keyboard.releaseAll();
 }
 
 void LEDDisplay(byte mode, bool numlok) {
