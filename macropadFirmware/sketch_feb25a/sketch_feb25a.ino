@@ -43,6 +43,9 @@ byte layout[5][4] = {               //layout grid for characters
   {16, -1, 18, 19}
 };
 
+//encoder setup
+
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(1500);
@@ -54,6 +57,8 @@ void setup() {
   pinMode(A0, INPUT_PULLUP);//numlok key input
   pinMode(3, OUTPUT);//left mode disp LED
   pinMode(4, OUTPUT);//right mode disp LED
+  pinMode(A1, INPUT);//encoder pin
+  pinMode(A2, INPUT);//Encoder pin 2
 
   for (int i = 0; i < rowCount; i++) {
     Serial.print(rows[i]); Serial.println(" as input");
@@ -184,6 +189,7 @@ void loop() {
   }
 
   //check encoder
+ 
 
   //check if modeSwitch is pressed
   while (digitalRead(A0) == LOW) {
