@@ -12,7 +12,7 @@
 
 
 void mode0(byte keyNum, bool numlok, bool * pointNumLok) {
-
+//hello there
   if (numlok) {
     switch (keyNum) {
       case 0:
@@ -88,22 +88,22 @@ void mode0(byte keyNum, bool numlok, bool * pointNumLok) {
         Keyboard.write('7');
         break;
       case 5:// '8' key
-        Keyboard.write(218);
+        Keyboard.press(218);
         break;
       case 6:// '9' key
         Keyboard.write('9');
         break;
       case 7:// 'ENCODER' key
-        Keyboard.write(153);
+        Keyboard.press(153);
         break;
       case 8:// '4' key
-        Keyboard.write(216);
+        Keyboard.press(216);
         break;
       case 9:// '5' key
         Keyboard.write('5');
         break;
       case 10:// '6' key
-        Keyboard.write(215);
+        Keyboard.press(215);
         break;
       case 11://'+' key
         Keyboard.write('+');
@@ -112,7 +112,7 @@ void mode0(byte keyNum, bool numlok, bool * pointNumLok) {
         Keyboard.write('1');
         break;
       case 13://'2' key
-        Keyboard.write(217);
+        Keyboard.press(217);
         break;
       case 14:// '3' key
         Keyboard.write('3');
@@ -125,6 +125,121 @@ void mode0(byte keyNum, bool numlok, bool * pointNumLok) {
         break;
       case 19://'ENTER' key
         Keyboard.write(176);
+        break;
+    }
+  }
+}
+
+
+
+void releaseMode0(byte keyNum, bool numLok){
+  if (numlok) {
+    switch (keyNum) {
+      case 1:// '/' key
+        Keyboard.release('/');
+        break;
+      case 2:// '*' key
+        Keyboard.release('*');
+        break;
+      case 3:// '-' key
+        Keyboard.release('-');
+        break;
+      case 4:// '7' key
+        Keyboard.release('7');
+        break;
+      case 5:// '8' key
+        Keyboard.release('8');
+        break;
+      case 6:// '9' key
+        Keyboard.release('9');
+        break;
+      case 7:// 'ENCODER' key
+        Keyboard.release(153);
+        break;
+      case 8:// '4' key
+        Keyboard.release('4');
+        break;
+      case 9:// '5' key
+        Keyboard.release('5');
+        break;
+      case 10:// '6' key
+        Keyboard.release('6');
+        break;
+      case 11://'+' key
+        Keyboard.release('+');
+        break;
+      case 12:// '1' key
+        Keyboard.release('1');
+        break;
+      case 13://'2' key
+        Keyboard.release('2');
+        break;
+      case 14:// '3' key
+        Keyboard.release('3');
+        break;
+      case 16:// '0' key
+        Keyboard.release('0');
+        break;
+      case 18://'.' key
+        Keyboard.release('.');
+        break;
+      case 19://'ENTER' key
+        Keyboard.release(176);
+        break;
+    }
+  } else {
+    switch (keyNum) {
+     
+     case 1:// '/' key
+        Keyboard.release('/');
+        break;
+      case 2:// '*' key
+        Keyboard.release('*');
+        break;
+      case 3:// '-' key
+        Keyboard.release('-');
+        break;
+      case 4:// '7' key
+        Keyboard.release('7');
+        break;
+      case 5:// '8' key
+        Keyboard.release(218);
+        break;
+      case 6:// '9' key
+        Keyboard.release('9');
+        break;
+      case 7:// 'ENCODER' key
+        Keyboard.release(153);
+        break;
+      case 8:// '4' key
+        Keyboard.release(216);
+        break;
+      case 9:// '5' key
+        Keyboard.release('5');
+        break;
+      case 10:// '6' key
+        Keyboard.release(215);
+        break;
+      case 11://'+' key
+        Keyboard.release('+');
+        break;
+      case 12:// '1' key
+        Keyboard.release('1');
+        break;
+      case 13://'2' key
+        Keyboard.release(217);
+        break;
+      case 14:// '3' key
+        Keyboard.release('3');
+        break;
+      case 16:// '0' key
+        Keyboard.release('0');
+        break;
+      case 18://'.' key
+        Keyboard.release('.');
+        break;
+      case 19://'ENTER' key
+        Keyboard.release(176);
         break;
     }
   }
