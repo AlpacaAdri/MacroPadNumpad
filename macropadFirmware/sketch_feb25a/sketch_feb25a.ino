@@ -108,7 +108,7 @@ void keyPressed(int row, int col) {
         mode3(layout[row][col], numlok, pointNumLok);
         break;
     }
-    
+
     keyDown[row][col] = 1;
   }
   else if (keyDown[row][col] > longPressDelay) { //if the key has been held for longer that longPressDelay, it switches into spam mode
@@ -121,7 +121,23 @@ void keyPressed(int row, int col) {
 void resetKey(int row, int col) { //resetting the variables after key is released
   keyDown[row][col] = 0;
   keyLong[row][col] = false;
-  Keyboard.releaseAll();
+  switch (mode) {
+    case 0:
+      releaseMode0(layout[row][col], numlok);
+      break;
+
+    case 1:
+      releaseMode1(layout[row][col], numlok);
+      break;
+
+    case 2:
+      releaseMode2(layout[row][col], numlok);
+      break;
+
+    case 3:
+      releaseMode3(layout[row][col], numlok);
+      break;
+  }
 }
 
 void LEDDisplay(byte mode, bool numlok) {
@@ -182,7 +198,7 @@ void loop() {
   //display to LEDs
   LEDDisplay(mode, numlok);
   //Emergency Testing disable
-  if(digitalRead(A3) == HIGH){
+  if (digitalRead(A3) == HIGH) {
     Keyboard.end();
   }
 
