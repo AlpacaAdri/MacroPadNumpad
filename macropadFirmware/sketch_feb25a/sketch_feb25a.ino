@@ -30,8 +30,7 @@ int longPressDelay = 350;
 
 
 //spamSpeed arr helpers
-int keyDown[colCount][rowCount]; //how long each key has been pressed down
-bool keyLong[colCount][rowCount]; //which keys are pressed down
+bool keyDown[colCount][rowCount]; //which keys are pressed down
 
 
 //key nums
@@ -95,37 +94,16 @@ void keyPressed(int row, int col) {
         break;
     }
   }
-  else if (keyLong[row][col] && keyDown[row][col] > spamSpeed) { //if the key has been held long enough to warrant another keystroke set
-    switch (mode) {
-      case 0:
-        mode0(layout[row][col], numlok, pointNumLok);
-        break;
+  keyDown[row][col] = true;
+ 
+    
 
-      case 1:
-        mode1(layout[row][col], numlok, pointNumLok);
-        break;
-
-      case 2:
-        mode2(layout[row][col], numlok, pointNumLok);
-        break;
-
-      case 3:
-        mode3(layout[row][col], numlok, pointNumLok);
-        break;
-    }
-
-    keyDown[row][col] = 1;
-  }
-  else if (keyDown[row][col] > longPressDelay) { //if the key has been held for longer that longPressDelay, it switches into spam mode
-    keyLong[row][col] = true;
-  }
-
-  keyDown[row][col]++;
+  
 }
 
 void resetKey(int row, int col) { //resetting the variables after key is released
-  keyDown[row][col] = 0;
-  keyLong[row][col] = false;
+  keyDown[row][col] = false;
+  //keyLong[row][col] = false;
   switch (mode) {
     case 0:
       releaseMode0(layout[row][col], numlok);

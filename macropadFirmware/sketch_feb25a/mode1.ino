@@ -116,7 +116,7 @@ void mode1(byte keyNum, bool numlok, bool * pointNumLok) {
         delay(50);
         break;
       case 19://'ENTER' key
-        Keyboard.write(176);
+        Keyboard.press(176);
         break;
     }
   } else {
@@ -335,7 +335,7 @@ void releaseMode1(byte keyNum, bool numLok){
         //Keyboard.release('.');
         break;
       case 19://'ENTER' key
-        //Keyboard.release(176);
+        Keyboard.release(176);
         break;
     }
   }
