@@ -43,6 +43,9 @@ byte layout[5][4] = {               //layout grid for characters
   {16, -1, 18, 19}
 };
 
+//encoder setup
+
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(1500);
@@ -54,6 +57,8 @@ void setup() {
   pinMode(A0, INPUT_PULLUP);//numlok key input
   pinMode(3, OUTPUT);//left mode disp LED
   pinMode(4, OUTPUT);//right mode disp LED
+  pinMode(A1, INPUT);//encoder pin
+  pinMode(A2, INPUT);//Encoder pin 2
 
   for (int i = 0; i < rowCount; i++) {
     Serial.print(rows[i]); Serial.println(" as input");
@@ -108,7 +113,7 @@ void keyPressed(int row, int col) {
         mode3(layout[row][col], numlok, pointNumLok);
         break;
     }
-    
+
     keyDown[row][col] = 1;
   }
   else if (keyDown[row][col] > longPressDelay) { //if the key has been held for longer that longPressDelay, it switches into spam mode
@@ -121,7 +126,23 @@ void keyPressed(int row, int col) {
 void resetKey(int row, int col) { //resetting the variables after key is released
   keyDown[row][col] = 0;
   keyLong[row][col] = false;
-  Keyboard.releaseAll();
+  switch (mode) {
+    case 0:
+      releaseMode0(layout[row][col], numlok);
+      break;
+
+    case 1:
+      releaseMode1(layout[row][col], numlok);
+      break;
+
+    case 2:
+      releaseMode2(layout[row][col], numlok);
+      break;
+
+    case 3:
+      releaseMode3(layout[row][col], numlok);
+      break;
+  }
 }
 
 void LEDDisplay(byte mode, bool numlok) {
@@ -168,6 +189,7 @@ void loop() {
   }
 
   //check encoder
+ 
 
   //check if modeSwitch is pressed
   while (digitalRead(A0) == LOW) {
@@ -182,7 +204,7 @@ void loop() {
   //display to LEDs
   LEDDisplay(mode, numlok);
   //Emergency Testing disable
-  if(digitalRead(A3) == HIGH){
+  if (digitalRead(A3) == HIGH) {
     Keyboard.end();
   }
 
