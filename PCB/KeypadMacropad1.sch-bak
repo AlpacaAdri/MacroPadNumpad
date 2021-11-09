@@ -721,7 +721,7 @@ Wire Notes Line
 	7650 1300 6250 1300
 Wire Notes Line
 	6250 1300 6250 2700
-Text Notes 2250 5450 0    50   ~ 10
+Text Notes 1800 5450 0    50   ~ 10
 Processor Arduino
 Text GLabel 7400 2250 2    50   Input ~ 0
 d2

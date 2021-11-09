@@ -15,72 +15,6 @@ Comment4 ""
 $EndDescr
 Text GLabel 7300 4300 2    50   Input ~ 0
 row2
-Text GLabel 4950 3750 1    50   Input ~ 0
-+5V
-$Comp
-L Device:R R2
-U 1 1 5FFEEC7E
-P 5250 4350
-F 0 "R2" V 5457 4350 50  0000 C CNN
-F 1 "1000 ohm" V 5366 4350 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 5180 4350 50  0001 C CNN
-F 3 "~" H 5250 4350 50  0001 C CNN
-	1    5250 4350
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R1
-U 1 1 5FFEF092
-P 5250 4050
-F 0 "R1" V 5457 4050 50  0000 C CNN
-F 1 "1000 ohm" V 5366 4050 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 5180 4050 50  0001 C CNN
-F 3 "~" H 5250 4050 50  0001 C CNN
-	1    5250 4050
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	4950 3750 4950 4050
-Wire Wire Line
-	4950 4050 5100 4050
-Wire Wire Line
-	5400 4050 5650 4050
-Wire Wire Line
-	5900 4050 5900 4300
-Wire Wire Line
-	5900 4300 6200 4300
-Wire Wire Line
-	5750 4500 6200 4500
-Text GLabel 5950 5000 0    50   Input ~ 0
-GND
-Wire Wire Line
-	5500 5050 5200 5050
-Wire Wire Line
-	5650 4050 5650 5200
-Wire Wire Line
-	5650 5200 5200 5200
-Connection ~ 5650 4050
-Wire Wire Line
-	5650 4050 5900 4050
-Wire Wire Line
-	6200 4400 6000 4400
-Wire Wire Line
-	6000 5000 5950 5000
-Wire Wire Line
-	6000 4400 6000 5000
-$Comp
-L Device:Rotary_Encoder_Switch SW1
-U 1 1 5FFF069C
-P 6500 4400
-F 0 "SW1" H 6500 4767 50  0000 C CNN
-F 1 "Rotary_Encoder_Switch" H 6500 4676 50  0000 C CNN
-F 2 "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm" H 6350 4560 50  0001 C CNN
-F 3 "~" H 6500 4660 50  0001 C CNN
-	1    6500 4400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6800 5000 6800 4500
 $Comp
 L Device:D D1
 U 1 1 602E6CE7
@@ -92,8 +26,6 @@ F 3 "~" H 7150 4300 50  0001 C CNN
 	1    7150 4300
 	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	6800 4300 7000 4300
 Wire Wire Line
 	6800 1900 6550 1900
 Text GLabel 6550 1900 0    50   Input ~ 0
@@ -673,38 +605,14 @@ Wire Wire Line
 Wire Wire Line
 	9600 2500 9600 3250
 Connection ~ 9600 2500
-Wire Wire Line
-	5100 4350 4950 4350
-Wire Wire Line
-	4950 4350 4950 4050
-Connection ~ 4950 4050
-Wire Wire Line
-	5400 4350 5500 4350
-Connection ~ 5500 4350
-Wire Wire Line
-	5500 4350 5500 5050
-Wire Wire Line
-	5750 4350 5500 4350
-Wire Wire Line
-	5750 4350 5750 4500
-Wire Notes Line
-	4650 3450 7650 3450
 Wire Notes Line
 	7650 3450 7650 5500
-Wire Notes Line
-	7650 5500 4650 5500
-Wire Notes Line
-	4650 3450 4650 5500
-Text Notes 4700 5450 0    50   ~ 10
-Rotary Encoder
 Text Notes 8050 5500 0    50   ~ 10
 Switch Matrix
 Text Notes 6300 2650 0    50   ~ 10
 LED UI Array
 Wire Notes Line
 	1750 2600 1750 5500
-Wire Notes Line
-	1750 5500 3950 5500
 Wire Notes Line
 	10350 5550 10350 1300
 Wire Notes Line
@@ -721,22 +629,12 @@ Wire Notes Line
 	7650 1300 6250 1300
 Wire Notes Line
 	6250 1300 6250 2700
-Text Notes 1800 5450 0    50   ~ 10
-Processor Arduino
 Text GLabel 7400 2250 2    50   Input ~ 0
 d2
 Text GLabel 7400 1900 2    50   Input ~ 0
 d3
 Text GLabel 7400 1550 2    50   Input ~ 0
 D4
-Text GLabel 2650 4950 3    50   Input ~ 0
-+5V
-Text GLabel 2850 2900 1    50   Input ~ 0
-GND
-Text GLabel 2750 2900 1    50   Input ~ 0
-GND
-Text GLabel 2650 2900 1    50   Input ~ 0
-GND
 Text GLabel 2200 4200 0    50   Input ~ 0
 D4
 Text GLabel 2200 4300 0    50   Input ~ 0
@@ -757,21 +655,35 @@ Text GLabel 2200 3600 0    50   Input ~ 0
 col4
 Text GLabel 2200 3300 0    50   Input ~ 0
 col3
-$Comp
-L arduino:Arduino_Pro_Micro U1
-U 1 1 60300C8F
-P 2750 3500
-F 0 "U1" H 2750 1850 50  0000 C CNN
-F 1 "Arduino_Pro_Micro" H 2750 1750 50  0000 C CNN
-F 2 "Arduino:Arduino_Pro_Micro" H 1850 2650 50  0001 C CNN
-F 3 "" H 1850 2650 50  0001 C CNN
-	1    2750 3500
-	1    0    0    -1  
-$EndComp
 Wire Notes Line
 	3950 2600 1750 2600
-Wire Notes Line
-	3950 5500 3950 2600
+Text GLabel 2200 3500 0    50   Input ~ 0
+col2
+Text GLabel 2200 3400 0    50   Input ~ 0
+col1
+NoConn ~ 2200 4500
+NoConn ~ 2200 4600
+Wire Wire Line
+	9200 5250 9900 5250
+Text GLabel 6800 5000 2    50   Input ~ 0
+col4
+NoConn ~ 3250 3300
+NoConn ~ 2850 4950
+NoConn ~ 3250 3800
+Text GLabel 5200 5050 0    50   Input ~ 0
+A1
+Text GLabel 5200 5200 0    50   Input ~ 0
+A2
+Text GLabel 3250 3700 2    50   Input ~ 0
+A2
+Text GLabel 3250 3600 2    50   Input ~ 0
+A1
+Wire Wire Line
+	2850 2900 3400 2900
+Wire Wire Line
+	3250 3500 3600 3500
+Wire Wire Line
+	3400 3300 3400 2900
 $Comp
 L MX_Alps_Hybrid:MX-NoLED SW2
 U 1 1 600CB89E
@@ -783,31 +695,119 @@ F 3 "http://www.apem.com/int/index.php?controller=attachment&id_attachment=1371"
 	1    3550 3350
 	0    1    1    0   
 $EndComp
+Wire Notes Line
+	3950 5500 3950 2600
+$Comp
+L arduino:Arduino_Pro_Micro U1
+U 1 1 60300C8F
+P 2750 3500
+F 0 "U1" H 2750 1850 50  0000 C CNN
+F 1 "Arduino_Pro_Micro" H 2750 1750 50  0000 C CNN
+F 2 "Arduino:Arduino_Pro_Micro" H 1850 2650 50  0001 C CNN
+F 3 "" H 1850 2650 50  0001 C CNN
+	1    2750 3500
+	1    0    0    -1  
+$EndComp
+Text GLabel 2650 2900 1    50   Input ~ 0
+GND
+Text GLabel 2750 2900 1    50   Input ~ 0
+GND
+Text GLabel 2850 2900 1    50   Input ~ 0
+GND
+Text GLabel 2650 4950 3    50   Input ~ 0
++5V
+Text Notes 1800 5450 0    50   ~ 10
+Processor Arduino
+Wire Notes Line
+	1750 5500 3950 5500
+Text Notes 4700 5450 0    50   ~ 10
+Rotary Encoder
+Wire Notes Line
+	4650 3450 4650 5500
+Wire Notes Line
+	7650 5500 4650 5500
+Wire Notes Line
+	4650 3450 7650 3450
 Wire Wire Line
-	3400 3300 3400 2900
+	5750 4350 5750 4500
 Wire Wire Line
-	3250 3500 3600 3500
+	5750 4350 5500 4350
 Wire Wire Line
-	2850 2900 3400 2900
-Text GLabel 2200 3500 0    50   Input ~ 0
-col2
-Text GLabel 2200 3400 0    50   Input ~ 0
-col1
-Text GLabel 3250 3600 2    50   Input ~ 0
-A1
-Text GLabel 3250 3700 2    50   Input ~ 0
-A2
-Text GLabel 5200 5200 0    50   Input ~ 0
-A2
-Text GLabel 5200 5050 0    50   Input ~ 0
-A1
-NoConn ~ 2200 4500
-NoConn ~ 2200 4600
-NoConn ~ 3250 3800
-NoConn ~ 2850 4950
-NoConn ~ 3250 3300
-Text GLabel 6800 5000 2    50   Input ~ 0
-col4
+	5500 4350 5500 5050
+Connection ~ 5500 4350
 Wire Wire Line
-	9200 5250 9900 5250
+	5400 4350 5500 4350
+Connection ~ 4950 4050
+Wire Wire Line
+	4950 4350 4950 4050
+Wire Wire Line
+	5100 4350 4950 4350
+Wire Wire Line
+	6800 4300 7000 4300
+Wire Wire Line
+	6800 5000 6800 4500
+$Comp
+L Device:Rotary_Encoder_Switch SW1
+U 1 1 5FFF069C
+P 6500 4400
+F 0 "SW1" H 6500 4767 50  0000 C CNN
+F 1 "Rotary_Encoder_Switch" H 6500 4676 50  0000 C CNN
+F 2 "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm" H 6350 4560 50  0001 C CNN
+F 3 "~" H 6500 4660 50  0001 C CNN
+	1    6500 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6000 4400 6000 5000
+Wire Wire Line
+	6000 5000 5950 5000
+Wire Wire Line
+	6200 4400 6000 4400
+Wire Wire Line
+	5650 4050 5900 4050
+Connection ~ 5650 4050
+Wire Wire Line
+	5650 5200 5200 5200
+Wire Wire Line
+	5650 4050 5650 5200
+Wire Wire Line
+	5500 5050 5200 5050
+Text GLabel 5950 5000 0    50   Input ~ 0
+GND
+Wire Wire Line
+	5750 4500 6200 4500
+Wire Wire Line
+	5900 4300 6200 4300
+Wire Wire Line
+	5900 4050 5900 4300
+Wire Wire Line
+	5400 4050 5650 4050
+Wire Wire Line
+	4950 4050 5100 4050
+Wire Wire Line
+	4950 3750 4950 4050
+$Comp
+L Device:R R1
+U 1 1 5FFEF092
+P 5250 4050
+F 0 "R1" V 5457 4050 50  0000 C CNN
+F 1 "1000 ohm" V 5366 4050 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 5180 4050 50  0001 C CNN
+F 3 "~" H 5250 4050 50  0001 C CNN
+	1    5250 4050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5FFEEC7E
+P 5250 4350
+F 0 "R2" V 5457 4350 50  0000 C CNN
+F 1 "1000 ohm" V 5366 4350 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 5180 4350 50  0001 C CNN
+F 3 "~" H 5250 4350 50  0001 C CNN
+	1    5250 4350
+	0    -1   -1   0   
+$EndComp
+Text GLabel 4950 3750 1    50   Input ~ 0
++5V
 $EndSCHEMATC

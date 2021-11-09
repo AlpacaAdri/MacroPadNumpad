@@ -1,4 +1,4 @@
-f/*  default - without bindings
+/*  default - without bindings
    layout:
 
    (unused) (1) (2) (3)
@@ -155,7 +155,6 @@ void releaseMode0(byte keyNum, bool numLok){
         break;
       case 7:// 'ENCODER' key
         Keyboard.release(153);
-        break;
       case 8:// '4' key
         Keyboard.release('4');
         break;

@@ -149,7 +149,7 @@ void loop() {
   //scan matrix
   for (int c = 0; c < colCount; c++) {
     digitalWrite(cols[c], LOW); //set a column low
-    delayMicroseconds(5); //setttle down little electrons
+    delayMicroseconds(10); //setttle down little electrons
 
     for (int r = 0; r < rowCount; r++) { //check rows
       if (digitalRead(rows[r]) == LOW)
@@ -165,9 +165,17 @@ void loop() {
     digitalWrite(cols[c], HIGH);//reset col
     delayMicroseconds(500);
   }
-
+/*
   //check encoder
- 
+ if(A1 && !A2){
+  keyPressed(3, 3);
+ }else if(A2 && !A1){
+  keyPressed(1, 4);
+ }else{
+  resetKey(3, 3);
+  resetKey(1, 4);
+ }
+*/
 
   //check if modeSwitch is pressed
   while (digitalRead(A0) == LOW) {
